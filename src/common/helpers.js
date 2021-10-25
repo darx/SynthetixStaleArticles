@@ -53,7 +53,7 @@ const fetch = (url, options) => {
       });
 
       res.on("end", () => {
-        var body = Buffer.concat(chunks);
+        const body = Buffer.concat(chunks);
         resolve(JSON.parse(body.toString()));
       });
     });
