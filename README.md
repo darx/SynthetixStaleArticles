@@ -11,7 +11,7 @@ npm install
 ## Setup environmental variables
 
 ```bash
-echo -e "SYNAPPS_APPLICATIONKEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\SYNAPPS_CONSUMERKEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\SYNAPPS_AUTHORIZATION=Bearer xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" > .env
+echo -e "SYNAPPS_APPLICATIONKEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nSYNAPPS_CONSUMERKEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nSYNAPPS_AUTHORIZATION=Bearer xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" > .env
 ```
 
 ## Running script
