@@ -2,14 +2,17 @@ const { fetch } = require("../common/helpers");
 
 module.exports = class Articles {
   static async list() {
-    let response = await fetch("https://api.synthetix.com/2.0/external/full_faqs", {
-      method: "GET",
-      headers: {
-        applicationkey: process.env.SYNAPPS_APPLICATIONKEY,
-        consumerkey: process.env.SYNAPPS_CONSUMERKEY,
-        authorization: process.env.SYNAPPS_AUTHORIZATION,
-      },
-    });
+    let response = await fetch(
+      "https://api.synthetix.com/2.0/external/full_faqs",
+      {
+        method: "GET",
+        headers: {
+          applicationkey: process.env.SYNAPPS_APPLICATIONKEY,
+          consumerkey: process.env.SYNAPPS_CONSUMERKEY,
+          authorization: process.env.SYNAPPS_AUTHORIZATION
+        }
+      }
+    );
 
     return response.items || [];
   }
@@ -22,9 +25,9 @@ module.exports = class Articles {
         headers: {
           applicationkey: process.env.SYNAPPS_APPLICATIONKEY,
           consumerkey: process.env.SYNAPPS_CONSUMERKEY,
-          authorization: process.env.SYNAPPS_AUTHORIZATION,
+          authorization: process.env.SYNAPPS_AUTHORIZATION
         },
-        data,
+        data
       }
     );
 

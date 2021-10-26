@@ -1,15 +1,16 @@
 {
   "name": "synthetix-stale-articles",
   "version": "0.0.1",
-  "description": "",
+  "description": "Scan Synthetix knowledge base for stale articles",
   "main": "src/index.js",
-  "scripts": {
-    "execute-script": "node src/index.js"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "dotenv": "^10.0.0"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "open": "^8.4.0"
   }
 }

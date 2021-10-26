@@ -3,7 +3,7 @@ const querystring = require("querystring");
 
 const { parse } = require("url");
 
-const formatDate = (d) => {
+const formatDate = d => {
   const date = typeof d === "string" ? new Date(d) : d;
 
   const yyyy = new Intl.DateTimeFormat("en", { year: "numeric" }).format(date);
@@ -23,7 +23,7 @@ const dateChuncks = (start, end, size) => {
 
     result.push({
       startdate: formatDate(new Date(s)),
-      enddate: formatDate(e <= end ? e : new Date(end)),
+      enddate: formatDate(e <= end ? e : new Date(end))
     });
 
     s.setDate(s.getDate() + size + 1);
@@ -41,14 +41,14 @@ const fetch = (url, options) => {
   const opts = Object.assign({}, options, {
     port: parts.protocol != "https:" ? 80 : 443,
     path: parts.path,
-    host: parts.host,
+    host: parts.host
   });
 
   return new Promise((resolve, reject) => {
-    const req = https.request(opts, (res) => {
+    const req = https.request(opts, res => {
       const chunks = [];
 
-      res.on("data", (chunk) => {
+      res.on("data", chunk => {
         chunks.push(chunk);
       });
 
