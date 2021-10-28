@@ -62,4 +62,39 @@ const fetch = (url, options) => {
   });
 };
 
-module.exports = { fetch, dateChuncks, formatDate };
+// const toCSV = arr => {
+//   var array = typeof arr != "object" ? JSON.parse(arr) : arr;
+//   var str = "";
+
+//   for (var i = 0; i < array.length; i++) {
+//     var line = "";
+//     for (var index in array[i]) {
+//       if (line != "") line += ",";
+
+//       line += array[i][index];
+//     }
+
+//     str += line + "\r\n";
+//   }
+
+//   return str;
+// };
+const toCSV = arr => {
+  const items = arr;
+
+  const replacer = (_, value) => (value === null ? "" : value);
+  const header = Object.keys(items[0]);
+  
+  const csv = [
+    header.join(","),
+    ...items.map(row =>
+      header
+        .map(fieldName => JSON.stringify(row[fieldName], replacer))
+        .join(",")
+    )
+  ].join("\r\n");
+
+  return csv;
+};
+
+module.exports = { fetch, dateChuncks, formatDate, toCSV };
