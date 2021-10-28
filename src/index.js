@@ -11,7 +11,13 @@ const ArticlesController = require("./controllers/ArticlesController");
 const argv = require("minimist")(process.argv.slice(2));
 
 (async () => {
-  let data = await ArticlesController.getStale(argv.start, argv.end);
+  let data;
+
+  if (!argv.action) {
+    data = await ArticlesController.getStale(argv.start, argv.end);
+  } else if (argv.action === "hits") {
+    data = await ArticlesController.getHits(argv.start, argv.end);
+  }
 
   try {
     fs.unlinkSync("null.json");

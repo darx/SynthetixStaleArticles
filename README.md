@@ -19,5 +19,11 @@ echo -e "SYNAPPS_APPLICATIONKEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\nSYNAPPS_CONSUM
 Date format: MM-DD-YYYY
 
 ```bash
-node .\src\index.js  --start 10-24-2020 --end 10-24-2021
+node .\src\index.js --start 10-24-2020 --end 10-24-2021
+```
+
+### Article hit count
+
+```bash
+node .\src\index.js --start 10-24-2020 --end 10-24-2021 --action hits
 ```
